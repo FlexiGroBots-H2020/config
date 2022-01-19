@@ -2,18 +2,14 @@ version: '3.8'
 
 services:
 
-  ows:
-    image: opendatacube/ows:latest
-    ports:
-      - 8000:8000
+  jupyter:
+    image: opendatacube/cube-in-a-box:latest
     environment:
       DB_HOSTNAME: ${DB_HOSTNAME}
       DB_PORT: ${DB_PORT}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_DATABASE: ${DB_DATABASE}
-      PYTHONPATH: /env/config
-      DATACUBE_OWS_CFG: ows_refactored.dev_af_ows_root_cfg.ows_cfg
       # Defaults are defined in .env file
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
@@ -22,10 +18,16 @@ services:
       AWS_DEFAULT_REGION: ${AWS_REGION}
       # Talk to AWS without using credentials
       AWS_NO_SIGN_REQUEST: "${AWS_NO_SIGN_REQUEST}"
+      CIABPASSWORD: ${CIABPASSWORD:-secretpassword}
+    ports:
+      - "80:8888"
     volumes:
-      - ./services/ows_refactored:/env/config/ows_refactored/
-      - ./services/inventory:/env/config/inventory/
-      - /data/odc/ows/output:/env/config/output/
+    #  - ../deafrica-sandbox-notebooks:/notebooks    
+    #  - ./notebooks:/notebooks
+      - ../cube-in-a-box/notebooks:/notebooks
+    #  - ./products.csv:/products.csv
+    restart: always
+    command: "jupyter notebook --allow-root --ip='0.0.0.0' -NotebookApp.token='${CIABPASSWORD}'"
 
 
 networks: 

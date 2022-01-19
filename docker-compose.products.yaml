@@ -1,26 +1,33 @@
-version: '3.7'
+version: '3.8'
 
 services:
   postgres:
-    image: postgis/postgis:12-2.5-alpine
+    image: postgis/postgis:14-3.2-alpine
     ports:
       - "5434:5432"
     environment:
-      POSTGRES_PASSWORD: opendatacubepassword
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - /data/odc/pg/data:/var/lib/postgresql/data      
     restart: always
 
   products-tester:
     image: opendatacube/datacube-index:latest 
     environment:
-      DB_HOSTNAME: postgres
-      DB_USERNAME: postgres
-      DB_PASSWORD: opendatacubepassword
-      DB_DATABASE: postgres
-      DB_PORT: 5432
+      DB_HOSTNAME: ${DB_HOSTNAME}
+      DB_PORT: ${DB_PORT}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_DATABASE: ${DB_DATABASE}
     depends_on:
       - postgres
     volumes:
       - ./dev/products_dev.csv:/conf/products_dev.csv
       - ./prod/products_prod.csv:/conf/products_prod.csv
-      - ./products:/conf/products
-    command: tail -f /dev/null
+    command: tail -f /dev/null 
+
+
+networks: 
+  default: 
+    external: 
+      name: odcnet

@@ -28,38 +28,41 @@ ows_cfg = {
             },
         },
         "allowed_urls": [
+            "http://127.0.0.1:8000/",
+            "http://localhost:8000/",
             "https://ows.dev.digitalearth.africa",
-            "https://ows-latest.dev.digitalearth.africa",
+            "https://ows-latest.dev.digitalearth.africa"
         ],
         # Metadata to go straight into GetCapabilities documents
-        "title": "Digital Earth Africa - OGC Web Services",
-        "abstract": """Digital Earth Africa OGC Web Services""",
-        "info_url": "digitalearthafrica.org/",
+        "title": "Flexigrobots - OGC Web Services",
+        "abstract": """Flexigrobots OGC Web Services""",
+        "info_url": "https://flexigrobots-h2020.eu",
         "keywords": [
             "landsat",
-            "africa",
+            "sentinel-2",
+            "flexigrobots",
             "WOfS",
             "fractional-cover",
             "time-series",
         ],
         "contact_info": {
-            "person": "Digital Earth Africa",
-            "organisation": "Digital Earth Africa",
+            "person": "EU H2020 FLEXIGROBOTS Project",
+            "organisation": "EU H2020 FLEXIGROBOTS Project",
             "position": "",
             "address": {
                 "type": "postal",
-                "address": "GPO Box 378",
-                "city": "Canberra",
-                "state": "ACT",
-                "postcode": "2609",
-                "country": "Australia",
+                "address": "Albarracin, 25",
+                "city": "Madrid",
+                "state": "Madrid",
+                "postcode": "28037",
+                "country": "Spain",
             },
-            "telephone": "+61 2 6249 9111",
+            "telephone": "",
             "fax": "",
-            "email": "info@digitalearthafrica.org",
+            "email": "contact@flexigrobots-h2020.eu",
         },
         "fees": "",
-        "access_constraints": "© Commonwealth of Australia (Geoscience Australia) 2018. "
+        "access_constraints": "© EU H2020 FLEXIGROBOTS Project 2022. "
         "This product is released under the Creative Commons Attribution 4.0 International Licence. "
         "http://creativecommons.org/licenses/by/4.0/legalcode",
         "translations_directory": "/env/config/ows_refactored/translations",
@@ -70,7 +73,7 @@ ows_cfg = {
     },  # END OF global SECTION
     "wms": {
         # Config for WMS service, for all products/layers
-        "s3_aws_zone": "af-south-1",
+        "s3_aws_zone": "eu-west-3",
         "max_width": 512,
         "max_height": 512,
     },  # END OF wms SECTION
@@ -103,8 +106,8 @@ ows_cfg = {
     },  # END OF wcs SECTION
     "layers": [
         {
-            "title": "Digital Earth Africa - OGC Web Services",
-            "abstract": "Digital Earth Africa OGC Web Services",
+            "title": "Flexigrobots - OGC Web Services",
+            "abstract": "Flexigrobots - OGC Web Services",
             "layers": [
                 # Hierarchical list of layers.  May be a combination of unnamed/unmappable
                 # folder-layers or named mappable layers.

@@ -5,30 +5,21 @@ from ows_refactored.common.ows_legend_cfg import (
 
 # colour ramps-------------------------------------
 mean_cr = [
-    {"value": -0.0, "color": "#8F3F20", "alpha": 0.0},
-    {"value": 0.0, "color": "#8F3F20", "alpha": 1.0},
-    {"value": 0.1, "color": "#ffffe5"},
-    {"value": 0.15, "color": "#fbfecf"},
-    {"value": 0.2, "color": "#f7fcb9"},
-    {"value": 0.25, "color": "#e8f6ae"},
-    {"value": 0.3, "color": "#d9f0a3"},
-    {"value": 0.35, "color": "#c3e698"},
-    {"value": 0.4, "color": "#addd8e"},
-    {"value": 0.45, "color": "#92d284"},
-    {"value": 0.5, "color": "#78c679"},
-    {"value": 0.55, "color": "#5cb86b"},
-    {"value": 0.6, "color": "#41ab5d"},
-    {"value": 0.65, "color": "#329850"},
-    {"value": 0.7, "color": "#238443"},
-    {"value": 0.75, "color": "#12763d"},
-    {"value": 0.8, "color": "#006837"},
-    {"value": 0.85, "color": "#005630"},
-    {"value": 0.9, "color": "#004529"},
+    {"value": -0.0, "color": "#000000", "alpha": 0.0},
+    {"value": 0.0, "color": "#d73027"},
+    {"value": 0.1, "color": "#f46d43"},
+    {"value": 0.2, "color": "#fdae61"},
+    {"value": 0.3, "color": "#fee08b"},
+    {"value": 0.4, "color": "#ffffbf"},
+    {"value": 0.5, "color": "#d9ef8b"},
+    {"value": 0.6, "color": "#a6d96a"},
+    {"value": 0.7, "color": "#66bd63"},
+    {"value": 0.8, "color": "#1a9850"},
+    {"value": 0.9, "color": "#006837"}
 ]
 
 std_cr = [
-    {"value": 0, "color": "#FFFFFF", "alpha": 1},
-    {"value": 0.001, "color": "#000004"},
+    {"value": 0.0, "color": "#000004"},
     {"value": 0.025, "color": "#0a0822"},
     {"value": 0.05, "color": "#1d1147"},
     {"value": 0.075, "color": "#36106b"},
@@ -48,7 +39,7 @@ std_cr = [
 ]
 
 count_cr = [
-    {"value": 0, "color": "#FFFFFF", "alpha": 1},
+    {"value": 0, "color": "#FFFFFF", "alpha": 0.0},
     {"value": 1, "color": "#f7fbff"},
     {"value": 10, "color": "#ebf3fb"},
     {"value": 20, "color": "#deebf7"},
@@ -501,7 +492,7 @@ style_count_jan = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -526,7 +517,7 @@ style_count_feb = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -551,7 +542,7 @@ style_count_mar = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -576,7 +567,7 @@ style_count_apr = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -601,7 +592,7 @@ style_count_may = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -626,7 +617,7 @@ style_count_jun = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -651,7 +642,7 @@ style_count_jul = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -676,7 +667,7 @@ style_count_aug = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -701,7 +692,7 @@ style_count_sep = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -726,7 +717,7 @@ style_count_oct = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -751,7 +742,7 @@ style_count_nov = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },
@@ -776,7 +767,7 @@ style_count_dec = {
         "begin": "0",
         "end": "160",
         "decimal_places": 0,
-        "ticks_every": 10,
+        "ticks_every": 20,
         "tick_labels": {
             "160": {"suffix": "<"},
         },

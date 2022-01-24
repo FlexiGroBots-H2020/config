@@ -1,3 +1,16 @@
+First of all:
+
+$ mkdir odc && cd odc
+$ git clone git@github.com:FlexiGroBots-H2020/cube-in-a-box.git
+$ git clone git@github.com:FlexiGroBots-H2020/datacube-ows.git
+$ git clone git@github.com:FlexiGroBots-H2020/datacube-wps.git
+$ git clone git@github.com:FlexiGroBots-H2020/datacube-config.git
+$ git clone git@github.com:FlexiGroBots-H2020/datacube-sandbox-notebooks.git
+
+Create the folder where to store the containers' data
+$ mkdir /data
+
+
 0. Build cube-in-a-box image
 	
 	$ cd cube-in-a-box
@@ -25,8 +38,9 @@
 	# datacube-ows-update
 	# exit
 	
+	Stop and relaunch again the container so it is aware of the changes in the database
 	
 3. Deploy Jupyter Hub and sample notebooks
 	
 	$ cd datacube-config
-    $ docker-compose -f docker-compose.jupyter.yaml up
+    	$ docker-compose -f docker-compose.jupyter.yaml up

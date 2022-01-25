@@ -15,7 +15,10 @@ $ mkdir /data
 	
 	$ cd cube-in-a-box
 	$ docker build . --tag opendatacube/cube-in-a-box
-	
+
+0. Create odcnet network
+
+	$ docker network create odcnet
 
 1. Registration of EO data products definitions and indexation of Sentinel 2 data products
 

@@ -23,7 +23,7 @@ $ mkdir /data
 1. Registration of EO data products definitions and indexation of Sentinel 2 data products
 
 	$ cd datacube-config
-	$ docker-compose -f docker-compose.products.yaml up
+	$ docker-compose -f docker-compose.products.yaml up -d
 	$ docker exec -it datacube-config_products-tester_1 bash
 	# datacube -v system init
 	# dc-sync-products /conf/products_prod.csv
@@ -34,7 +34,7 @@ $ mkdir /data
 2. Expose ODC EO data products via OGC Services
 
 	$ cd datacube-config
-	$ docker-compose -f docker-compose.ows.yaml up
+	$ docker-compose -f docker-compose.ows.yaml up -d
 	$ docker exec -it datacube-config_ows_1 bash
 	# datacube-ows-update --schema --role postgres
 	# datacube-ows-update --views
@@ -46,4 +46,4 @@ $ mkdir /data
 3. Deploy Jupyter Hub and sample notebooks
 	
 	$ cd datacube-config
-    	$ docker-compose -f docker-compose.jupyter.yaml up
+    	$ docker-compose -f docker-compose.jupyter.yaml up -d

@@ -16,6 +16,6 @@ sleep 15
 # stop and relaunch again the ows container so it is aware of the changes
 docker-compose -f docker-compose.ows.yaml down
 sleep 15
-docker-compose -f docker-compose.ows.yaml up
+docker-compose -f docker-compose.ows.yaml up -d
 
 

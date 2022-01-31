@@ -31,6 +31,7 @@ ows_cfg = {
             }
         },
         "allowed_urls": [
+            "http://flexi-datacube.westeurope.cloudapp.azure.com:8000/",
             "http://127.0.0.1:8000/",
             "http://localhost:8000/",
             "https://ows.dev.digitalearth.africa",

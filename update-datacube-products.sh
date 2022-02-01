@@ -1,8 +1,11 @@
 
 #!/usr/bin/env bash
 
+echo "Script execution date $(date)"
+
 # get the actual folder from where the script is executed
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+#SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=/home/maesbri/Documents/development/atos/flexigrobots/opendatacube/datacube-config
 
 # bounding box (spanish pilot)
 BBOX="-10,41,-9,42"

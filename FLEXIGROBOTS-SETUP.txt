@@ -11,16 +11,16 @@ Create the folder where to store the containers' data
 $ mkdir /data
 
 
-0. Build cube-in-a-box image
+1. Build cube-in-a-box image
 	
 	$ cd cube-in-a-box
 	$ docker build . --tag opendatacube/cube-in-a-box
 
-0. Create odcnet network
+2. Create odcnet network
 
 	$ docker network create odcnet
 
-1. Registration of EO data products definitions and indexation of Sentinel 2 data products
+3. Registration of EO data products definitions and indexation of Sentinel 2 data products
 
 	$ cd datacube-config
 	$ docker-compose -f docker-compose.products.yaml up -d
@@ -31,7 +31,7 @@ $ mkdir /data
 	# exit
 
 
-2. Expose ODC EO data products via OGC Services
+4. Expose ODC EO data products via OGC Services
 
 	$ cd datacube-config
 	$ docker-compose -f docker-compose.ows.yaml up -d
@@ -43,7 +43,15 @@ $ mkdir /data
 	
 	Stop and relaunch again the container so it is aware of the changes in the database
 	
-3. Deploy Jupyter Hub and sample notebooks
+5. Deploy Jupyter Hub and sample notebooks
 	
 	$ cd datacube-config
     	$ docker-compose -f docker-compose.jupyter.yaml up -d
+
+
+6. Create cron task for daily update of the datacube contents
+
+	$ sudo crontab -e
+
+	Manually add the following line in the editor (every day, at 23:00, it will execute script update-datacube-products.sh):
+	00 23 * * * sudo /home/maesbri/Documents/development/atos/flexigrobots/opendatacube/datacube-config/update-datacube-products.sh >> /tmp/update-datacube-products.log 2>&1

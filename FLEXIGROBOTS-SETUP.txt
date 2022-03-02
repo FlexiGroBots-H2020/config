@@ -48,8 +48,16 @@ $ mkdir /data
 	$ cd datacube-config
     	$ docker-compose -f docker-compose.jupyter.yaml up -d
 
+6. Deploy Explorer
 
-6. Create cron task for daily update of the datacube contents
+	$ cd datacube-config
+	$ docker-compose -f docker-compose.explorer.yaml up -d
+	$ docker exec -it explorer bash
+	# cubedash-gen --init --all
+	# cubedash-run
+	# exit
+
+7. Create cron task for daily update of the datacube contents
 
 	$ sudo crontab -e
 

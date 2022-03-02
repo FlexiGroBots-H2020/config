@@ -3,6 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgis/postgis:14-3.2-alpine
+    container_name: postgres
     ports:
       - "5434:5432"
     environment:
@@ -13,6 +14,7 @@ services:
 
   products-tester:
     image: opendatacube/datacube-index:latest 
+    container_name: products-tester
     environment:
       DB_HOSTNAME: ${DB_HOSTNAME}
       DB_PORT: ${DB_PORT}

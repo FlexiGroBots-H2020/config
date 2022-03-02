@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+
+  explorer:
+    image: opendatacube/explorer:latest
+    container_name: explorer
+    ports:
+      - 8081:8080    
+    environment:
+      DB_HOSTNAME: ${DB_HOSTNAME}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_PORT: ${DB_PORT}
+      FLASK_ENV: development
+      FLASK_APP: cubedash
+      FLASK_DEBUG: 1
+
+networks: 
+  default: 
+    external: 
+      name: odcnet

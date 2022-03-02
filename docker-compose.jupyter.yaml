@@ -4,6 +4,7 @@ services:
 
   jupyter:
     image: opendatacube/cube-in-a-box:latest
+    container_name: jupyter
     environment:
       DB_HOSTNAME: ${DB_HOSTNAME}
       DB_PORT: ${DB_PORT}

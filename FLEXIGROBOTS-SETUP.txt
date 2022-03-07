@@ -24,7 +24,7 @@ $ mkdir /data
 
 	$ cd datacube-config
 	$ docker-compose -f docker-compose.products.yaml up -d
-	$ docker exec -it datacube-config_products-tester_1 bash
+	$ docker exec -it products-tester bash
 	# datacube -v system init
 	# dc-sync-products /conf/products_prod.csv
 	# stac-to-dc --bbox='-10,41,-9,42' --catalog-href='https://earth-search.aws.element84.com/v0/' --collections='sentinel-s2-l2a-cogs' --datetime='2021-01-01/2022-01-31'
@@ -35,7 +35,7 @@ $ mkdir /data
 
 	$ cd datacube-config
 	$ docker-compose -f docker-compose.ows.yaml up -d
-	$ docker exec -it datacube-config_ows_1 bash
+	$ docker exec -it ows bash
 	# datacube-ows-update --schema --role postgres
 	# datacube-ows-update --views
 	# datacube-ows-update
@@ -46,7 +46,7 @@ $ mkdir /data
 5. Deploy Jupyter Hub and sample notebooks
 	
 	$ cd datacube-config
-    	$ docker-compose -f docker-compose.jupyter.yaml up -d
+    $ docker-compose -f docker-compose.jupyter.yaml up -d
 
 6. Deploy Explorer
 

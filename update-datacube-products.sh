@@ -14,12 +14,12 @@ DATETIME="$(date --date="2 days ago" +"%Y-%m-%d")/$(date --date="1 day" +"%Y-%m-
 
 # update the database
 echo "Indexing the latest tiles for BBOX=${BBOX} and DATETIME=${DATETIME}"
-docker exec -it datacube-config_products-tester_1 stac-to-dc --bbox=${BBOX} --catalog-href='https://earth-search.aws.element84.com/v0/' --collections='sentinel-s2-l2a-cogs' --datetime=${DATETIME}
+docker exec -it products-tester /bin/bash -c "stac-to-dc --bbox=${BBOX} --catalog-href='https://earth-search.aws.element84.com/v0/' --collections='sentinel-s2-l2a-cogs' --datetime=${DATETIME}"
 sleep 15
 
 # update the corresponding tables for the OWS OGC services
 echo "Updating OWS metadata"
-docker exec -it datacube-config_ows_1 /bin/bash -c "datacube-ows-update --schema --role postgres && sleep 5 && datacube-ows-update --views && sleep 5 && datacube-ows-update"
+docker exec -it ows /bin/bash -c "datacube-ows-update --schema --role postgres && sleep 5 && datacube-ows-update --views && sleep 5 && datacube-ows-update"
 sleep 15
 
 # stop and relaunch again the ows container so it is aware of the changes
@@ -27,5 +27,9 @@ echo "Restarting OWS container"
 docker-compose -f ${SCRIPT_DIR}/docker-compose.ows.yaml down 
 sleep 15
 docker-compose -f ${SCRIPT_DIR}/docker-compose.ows.yaml up -d
+sleep 15
+
+echo "Updating Explorer"
+docker exec -it explorer /bin/bash -c "cubedash-gen --init --all && cubedash-run"
 
 echo "END."

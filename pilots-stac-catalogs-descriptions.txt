@@ -1,0 +1,59 @@
+catalog-pilot1 <CATALOG>
+├── catalog.json
+└── eo
+    ├── catalog.json
+    ├── uav-raw <COLLECTION>
+    │   ├── catalog.json
+    │   └── uav-raw-20220311 <ITEM>
+    |       ├── uav-raw-20220311.tif
+    │       └── item.json <1 ASSETS>
+    ├── uav-raw-cog <COLLECTION>
+    │   ├── catalog.json
+    │   └── uav-raw-cog-20220311 <ITEM>
+    |       ├── uav-raw-cog-20220311.tif
+    │       └── item.json <1 ASSETS>
+    ├── uav-ndvi <COLLECTION>
+    │    ├── catalog.json
+    │    └── uav-ndvi-20220311
+    │        ├── uav-ndvi-20220311.tif
+    │        └── item.json <6 ASSETS>
+    └── uav-ndvi-cog <COLLECTION>
+        ├── catalog.json
+        └── uav-ndvi-cog-20220311
+            ├── uav-ndvi-cog-20220311.tif
+            └── item.json <1 ASSETS>
+
+catalog-pilot3 <CATALOG>
+├── catalog.json
+└── eo
+    ├── catalog.json
+    ├── uav-raw <COLLECTION>
+    │   ├── catalog.json
+    │   └── uav-raw-20220311 <ITEM>
+    |       ├── uav-raw-transparent-reflectance-blue-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-green-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-group1-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-nir-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-red-edge-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-red-20220311.tif            
+    │       └── item.json <6 ASSETS>
+    ├── uav-raw-cog <COLLECTION>
+    │   ├── catalog.json
+    │   └── uav-raw-cog-20220311 <ITEM>
+    |       ├── uav-raw-transparent-reflectance-blue-cog-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-green-cog-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-group1-cog-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-nir-cog-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-red-edge-cog-20220311.tif
+    |       ├── uav-raw-transparent-reflectance-red-cog-20220311.tif            
+    │       └── item.json <6 ASSETS>
+    ├── uav-ndvi <COLLECTION>
+    │    ├── catalog.json
+    │    └── uav-ndvi-20220311
+    │        ├── uav-ndvi-20220311.tif
+    │        └── item.json <1 ASSETS>
+    └── uav-ndvi-cog <COLLECTION>
+        ├── catalog.json
+        └── uav-ndvi-cog-20220311
+            ├── uav-ndvi-cog-20220311.tif
+            └── item.json <1 ASSETS>
